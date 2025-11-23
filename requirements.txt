@@ -1,0 +1,9 @@
+requests
+protobuf
+pycryptodome
+aiohttp
+cfonts
+python-telegram-bot
+flask
+gunicorn
+google-api-python-client
