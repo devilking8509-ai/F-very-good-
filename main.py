@@ -915,12 +915,22 @@ async def TcPOnLine(ip, port, key, iv, AutHToKen, reconnect_delay=0.5):
                         print(f"Error processing group data: {e}")
                         if data2.hex().startswith('0500') and len(data2.hex()) > 1000:
                             try:
-                                print(data2.hex()[10:])
-                                packet = await DeCode_PackEt(data2.hex()[10:])
+                                # Ye line shayad kisi except block ke andar hogi
+print(f"Error processing group data: {e}")  # 'P' ko chhota 'p' kiya
+
+# Logic start
+if data2.hex().startswith('0500') and len(data2.hex()) > 1000:
+    try:
+        print(data2.hex()[10:])
+        packet = await DeCode_PackEt(data2.hex()[10:])
         
-                                    print(packet)
-                                packet = json.loads(packet)
-                                OwNer_UiD , CHaT_CoDe , SQuAD_CoDe = await GeTSQDaTa(packet)
+        print(packet)  # <--- Is line ka space theek kiya
+        
+        packet = json.loads(packet)
+        OwNer_UiD, CHaT_CoDe, SQuAD_CoDe = await GeTSQDaTa(packet)
+    except Exception as e:
+        print(f"Inner Error: {e}")
+
 
                                 JoinCHaT = await AutH_Chat(3 , OwNer_UiD , CHaT_CoDe, key,iv)
                                 await SEndPacKeT(whisper_writer, online_writer, 'ChaT', JoinCHaT)
