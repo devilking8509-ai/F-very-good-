@@ -1,9 +1,11 @@
 requests
+psutil
+pyjwt
+urllib3
+aiohttp
+pytz
+cfonts
 protobuf
 pycryptodome
-aiohttp
-cfonts
-python-telegram-bot
 flask
-gunicorn
-google-api-python-client
+python-telegram-bot
