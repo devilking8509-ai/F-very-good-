@@ -1,7 +1,7 @@
 # By AbdeeLkarim BesTo
 
 import requests , json , binascii , time , urllib3 , base64 , datetime , re ,socket , threading , random , os , asyncio
-from protobuf_decoder.protobuf_decoder import Parser
+# from protobuf_decoder.protobuf_decoder import Parser
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad , unpad
 from datetime import datetime
